@@ -45,6 +45,7 @@ setLoginData({
     })
 }
 const logoutUser = () => {
+    history.push('/')
     dispatch({type: 'LOGOUT'})
 }
 
@@ -209,9 +210,9 @@ if(user === null){
         </div>
         <div className="prof-rightBar">
             <div className="profilepicbx">
-                <Avatar src={user.result.profilePic} alt={user.result.name}
+                <Avatar src={user.result.profilePic} alt={user.result.name} onClick={goToProfile}
                 className="prof-pic-circle" >{user.result.name.charAt(0)}</Avatar>
-                <p onClick={goToProfile} className="profile-names">{user.result.name}</p>
+                <p onClick={goToProfile} className="profile-names prof-right-name">{user.result.name}</p>
             </div>
             <p className="profile-names" onClick={logoutUser}>Log out</p>
         </div>
@@ -242,7 +243,7 @@ if(user === null){
                 </div>
             </div>
             <div className="timeline-posts">
-                <PublicPosts />
+                <PublicPosts user={user} />
             </div>
         </div>
         <div className="right-timeline">

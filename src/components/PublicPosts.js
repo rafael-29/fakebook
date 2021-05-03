@@ -8,10 +8,11 @@ import axios from 'axios'
 import {getPostAct, likePostAct} from '../actions/posts.js'
 
 
-const PublicPosts = () => {
+const PublicPosts = ({user}) => {
 
 const dispatch = useDispatch()
-const posts = useSelector(state => state.posts)
+const posts = useSelector(state => state.posts);
+
 
 const [usersData, setUsersData] = useState();
 
@@ -55,8 +56,9 @@ dispatch(likePostAct(post._id))
 }
 
 const renderlikeBtn = post => {
-    const theUserId = JSON.parse(localStorage.getItem('profile')).result._id
-    const isThere = post.likes.some(pId => pId === theUserId)
+    
+    
+    const isThere = post.likes.some(pId => pId === user?.result?._id)
 
     if(isThere){
         return <button onClick={() => likeFunc(post)}
@@ -85,7 +87,7 @@ getUsers()
 }, [dispatch])
 
 return(
-<div>{!posts.length ? (
+<div>{!posts.length || user === null ? (
 <div>
     <Skeleton variant="text" />
     <Skeleton variant="circle" width={40} height={40} />

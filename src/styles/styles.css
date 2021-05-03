@@ -723,5 +723,8 @@ body {
   .center-timeline {
     width: 90%;
   }
+  .prof-right-name {
+    display: none;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
