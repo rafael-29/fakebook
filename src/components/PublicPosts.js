@@ -47,7 +47,7 @@ usersData === undefined ? (<Avatar src={post.creatorImg} alt={post.name}>{post.n
 }
 
 const getUsers = async () => {
-    const results = await axios.get('http://localhost:8080/fakebookusers')
+    const results = await axios.get('https://rafafakebook.herokuapp.com/fakebookusers')
     setUsersData(results.data)
 }
 const likeFunc = post => {

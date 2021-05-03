@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import { Avatar, Button, Container, Grid, Paper, TextField, Typography} from '@material-ui/core'
-import {useHistory, Link} from 'react-router-dom'
+import {useHistory} from 'react-router-dom'
 //actions
 import {authAction} from '../actions/auth.js';
 import {createPostAct} from '../actions/posts.js'
