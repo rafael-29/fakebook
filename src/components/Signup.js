@@ -8,11 +8,11 @@ const Signup = ({setSignUpForm}) => {
 
 const dispatch = useDispatch()
 
-const month = ['january', 'february', 'march']
+const month = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december']
 
-const day = ['1', '2', '3']
+const day = ['1', '2', '3', '4', '5', '6', '7','8', '9', '10', '11', '12', '13', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
 
-const year = ['1990', '1991', '1993']
+const year = ['1990', '1991', '1993','1994','1995','1996','1997','1998','1999','2000','2001','2002','2003','2004','2005','2006','2007','2008','2009','2010']
 
 const [selectedMonth, setSelectedMonth] = useState('january')
 const [selectedDay, setSelectedDay] = useState('1')
@@ -137,7 +137,7 @@ return(
     </Grid>
     <Typography color="textSecondary">By clicking Sign Up, you agree to our Terms, Data Policy and Cookies Policy. You may receive SMS Notifications from us and can opt out any time.</Typography>
     <br />
-    <input type="file" onChange={uploadImg} />
+
     <div style={{textAlign: 'center', marginBottom: '7%'}}>
     <Button onClick={registerAcc}
     style={{background: '#00a400',
