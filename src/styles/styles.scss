@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+//colors
+$superBack: #363434;
+$backFont: #5a5858;
+$backPadding: #979393;
+$anotherFontcolor: #f5ebeb;
+
+
+//fonts
+$robotThin: 'Roboto', sans-serif;
+$mons400: 'Montserrat', sans-serif;
+
+.logoname{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3.3rem;
+    color: #1877f2;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+body{
+    background-color: #f5f5f5;
+}
+
+@import './profilepage.scss';
+@import './createPostOpen.scss';
+@import './timeline.scss';
