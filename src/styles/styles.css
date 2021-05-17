@@ -19,6 +19,108 @@ body {
   background-color: #f5f5f5;
 }
 
+.comment-input {
+  width: 90%;
+  border: none;
+  background-color: #5a5858;
+  padding: 10px 12px;
+  margin: 0 auto;
+  border: 1px solid #979393;
+  border-radius: 10px;
+  outline: none;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.comment-input::-webkit-input-placeholder {
+  color: #f5ebeb;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+}
+
+.comment-input:-ms-input-placeholder {
+  color: #f5ebeb;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+}
+
+.comment-input::-ms-input-placeholder {
+  color: #f5ebeb;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+}
+
+.comment-input::placeholder {
+  color: #f5ebeb;
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: 1.1rem;
+}
+
+.comment-bx {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.hiddenbx {
+  display: none;
+}
+
+.koment-bx {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin-bottom: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.koment-litbx {
+  width: 90%;
+  background-color: #363434;
+  border-radius: 10px;
+  padding: 10px;
+  margin: auto;
+}
+
+.koment-name {
+  font-family: sans-serif;
+  color: #f5ebeb;
+}
+
+.koment-clicks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  margin-top: 5px;
+  margin-left: 8%;
+}
+
+.kom-btn {
+  cursor: pointer;
+  margin-right: 13px;
+  font-size: 0.9rem;
+}
+
+.kom-btn:hover {
+  -webkit-filter: invert(1);
+          filter: invert(1);
+}
+
 .profile-page {
   background-color: #363434;
   padding: 100px 20px;

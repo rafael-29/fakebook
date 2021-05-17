@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux'
 import Skeleton from '@material-ui/lab/Skeleton';
-import {Avatar} from '@material-ui/core'
+import {Avatar, Typography} from '@material-ui/core'
 
 import axios from 'axios'
 
@@ -15,10 +15,11 @@ const posts = useSelector(state => state.posts);
 
 
 const [usersData, setUsersData] = useState();
+const [commentOpen, setCommentOpen] = useState(false)
 
 const renderRealAvatar = (post) => {
 
-const found = usersData.find(user => user._id === post.creator)
+const found = usersData.find(theuserm => theuserm._id === post.creator)
 if(found === undefined){
     <Avatar src={post.creatorImg} alt={post.name}>{post.name.charAt(0)}</Avatar>
 }else{
@@ -41,7 +42,7 @@ usersData === undefined ? (<Avatar src={post.creatorImg} alt={post.name}>{post.n
 
 <h5 className="caption">{post.name}</h5>
 </div>
-<i class="fas fa-ellipsis-h"></i>
+<i className="fas fa-ellipsis-h"></i>
 </div> 
 )
 
@@ -73,12 +74,28 @@ const renderLikes = (post) => (
 
 <div className="like-comment-share">
     {renderlikeBtn(post)}
-    <button className="posts-btn">Comment</button>
+    <button onClick={() => setCommentOpen(prev => !prev)}
+     className="posts-btn">Comment</button>
     <button className="posts-btn">Share</button>
 </div>
 
 )
 
+const renderComments = pozt => {
+
+    return pozt.commentos.map(koment => (
+        <div className={commentOpen ? "koment-bx" : "hiddenbx"} key={koment._id}>
+            <div className="koment-litbx">
+                <div className="koment-name">{koment.name}</div>
+                <div className="koment-name">{koment.comment}</div>
+            </div>
+            <div className="koment-clicks">
+                <div className="kom-btn">Like {koment.likes.length}</div>
+                <div className="kom-btn">reply</div>
+            </div>
+        </div>
+    ))
+}
 
 
 useEffect( () => {
@@ -114,9 +131,31 @@ return(
             <div className="likes-length" >
                 <div className="post-border"></div>
             </div>
-
+        
             {renderLikes(post)}
+            <div className={commentOpen ? "comment-bx" : "hiddenbx"}>
+                <input type="text" className="comment-input" placeholder="write a comment"
+onKeyPress={async e => {
 
+const datako = {
+    name: user.result.name,
+    commentorUserId: user.result._id,
+    comment: e.target.value
+}
+
+if(e.key === 'Enter'){
+await axios.patch(`http://localhost:8080/fakeposts/addcomment/${post._id}`, datako)
+
+dispatch(getPostAct())
+e.target.value = ""
+}
+}} />
+            
+            </div>
+            <div style={{display: 'flex',
+        flexDirection: 'column-reverse'}}>
+            {renderComments(post)}
+            </div>
         </div>
     ))}
 </div>

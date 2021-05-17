@@ -27,7 +27,66 @@ $mons400: 'Montserrat', sans-serif;
 body{
     background-color: #f5f5f5;
 }
+.comment-input{
+    width: 90%;
+    border: none;
+    background-color: $backFont;
+    padding: 10px 12px;
+    margin: 0 auto;
+    border: 1px solid $backPadding;
+    border-radius: 10px;
+    outline: none;
+    font-family: sans-serif;
+font-size: 1.1rem;
+color: white;
+}
+.comment-input::placeholder{
+color: $anotherFontcolor;
+letter-spacing: 1px;
+font-family: sans-serif;
+font-size: 1.1rem;
+}
+.comment-bx{
+text-align: center;
+margin-bottom: 20px;
+}
+.hiddenbx{
+    display: none;
+}
+.koment-bx{
+display: flex;
+align-items: flex-start;
 
+margin-bottom: 20px;
+flex-direction: column;
+}
+.koment-litbx{
+width: 90%;
+background-color: $superBack;
+border-radius: 10px;
+padding: 10px;
+margin: auto;
+}
+.koment-name{
+    font-family: sans-serif;
+    color: $anotherFontcolor;
+}
+.koment-clicks{
+    display: flex;
+    justify-content: flex-start;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    margin-top: 5px;
+    margin-left: 8%;
+}
+.kom-btn{
+    cursor: pointer;
+    margin-right: 13px;
+    font-size: 0.9rem;
+}
+.kom-btn:hover{
+    filter: invert(1)
+}
 @import './profilepage.scss';
 @import './createPostOpen.scss';
 @import './timeline.scss';

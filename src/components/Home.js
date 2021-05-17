@@ -111,7 +111,7 @@ setPostOpen(prev => !prev)
 
 useEffect( () => {
     setUser(JSON.parse(localStorage.getItem('profile')))
-
+    
 }, [auth])
 
 if(user === null){
@@ -177,7 +177,7 @@ if(user === null){
                     <div></div>
                     <h2 className="create-post" variant="h6">Create Post</h2>
                     <i onClick={() => setPostOpen(prev => !prev)}
-                    class="far fa-times-circle"></i>
+                    className="far fa-times-circle"></i>
                 </div>
                 <textarea className="posting-textarea" value={postData.title}
                 onChange={e => setPostData({...postData, title: e.target.value})}
@@ -192,7 +192,7 @@ if(user === null){
                         <img src="/images/tag.svg" className="post-imgs" />
                         <img src="/images/happy.svg" className="post-imgs" />
                         <img src="/images/chat.svg" className="post-imgs" />
-                        <i class="fas fa-ellipsis-h"></i>
+                        <i className="fas fa-ellipsis-h"></i>
                     </div>
                     
                 </div>
